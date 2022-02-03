@@ -4,8 +4,13 @@
 const express			= require("express")
 const app				= express()
 
+const connectDB			= require("./config/db")
+
 // 2. MIDDLEWARES
 require("dotenv").config()
+
+connectDB()
+
 
  
 // 3. RUTEO
