@@ -7,9 +7,9 @@ const app				= express()
 // 2. MIDDLEWARES
 require("dotenv").config()
 
-
+ 
 // 3. RUTEO
-
+app.use("/", require("./routes/index"))
 
 
 // 4. SERVIDOR
