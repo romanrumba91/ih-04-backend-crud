@@ -1,7 +1,6 @@
 
 
-const res = require("express/lib/response")
-const Book = require("../models/Book")
+const Book = require("./../models/Book")
 
 
 exports.getBooks = async (req, res) => {
