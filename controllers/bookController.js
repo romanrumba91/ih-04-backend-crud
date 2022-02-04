@@ -56,3 +56,37 @@ exports.getSingleBook = async(req, res) => {
         book: getTheBook
     })
 }
+exports.editBook = async(req, res) => {
+    const {bookID}=req.params
+    const foundBook = await Book.findById(bookID)
+
+    res.render("books/edit", {book:foundBook})
+
+}
+
+exports.editBookForm = async(req, res) => {
+
+    //NECESITO EL ID DEL LIBRO PARA EDITAR
+    const {bookID} =req.params
+    //DATOS DEL FORMULARIO NUEVOS CON LOS CUALES VOY A ACTUALIZAR
+    const { title, description, author, rating } = req.body
+    //actualizar base de datos
+    const updateBook = await Book.findByIdAndUpdate(
+        bookID,{ title, description, author, rating },
+        {new:true}
+    )
+
+    // REDIRECCIONAR A LA PAGINA INDIVIDUAL DEL LIBRO
+        return res.redirect(`/books/${updateBook._id}`)
+
+}
+
+exports.deleteBook = async(req, res) => {
+
+    //NECESITO EL ID DEL LIBRO PARA EDITAR
+    const {bookID} =req.params
+    //DATOS DEL FORMULARIO NUEVOS CON LOS CUALES VOY A ACTUALIZAR
+    //const deleteBook = await Book.findByIdAndDelete(bookID)
+    await Book.findByIdAndDelete(bookID)
+    res.redirect("/books")
+}

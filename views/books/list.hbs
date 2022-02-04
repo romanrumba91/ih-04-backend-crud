@@ -5,6 +5,10 @@
 	{{#each data }}
 		<div>
 			<h3>{{title}}</h3>
-			<a href ="/books/{{_id}}">Ver Detalles</a></h3>
+			<a href ="/books/{{_id}}">Ver Detalles</a>
+			<a href ="/books/{{_id}}/edit">Editar</a>
+			<form action="/books/{{_id}}/delete" method="POST">
+				<button>Borrar</button>				
+			</form>
 		</div>
 	{{/each}}
