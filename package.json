@@ -1,7 +1,6 @@
 {
   "name": "ih-04-backend-crud",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -15,5 +14,18 @@
     "express": "^4.17.2",
     "hbs": "^4.2.0",
     "mongoose": "^6.2.0"
-  }
+  },
+  "bin": {
+    "ih-04-backend-crud": "bin/seeds.js"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romanrumba91/ih-04-backend-crud.git"
+  },
+  "bugs": {
+    "url": "https://github.com/romanrumba91/ih-04-backend-crud/issues"
+  },
+  "homepage": "https://github.com/romanrumba91/ih-04-backend-crud#readme",
+  "description": ""
 }
